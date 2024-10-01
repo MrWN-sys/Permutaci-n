@@ -1,0 +1,18 @@
+lista = list(input('请输入一个字符串'))
+
+def function1(x, y):
+    if y != len(x) - 2:
+        for i in range(y, len(x)):
+            x[y], x[i] = x[i], x[y]
+            function1(x, y + 1)
+            x[y], x[i] = x[i], x[y]
+    else:
+        for r in range(y, len(x)):
+            x[y], x[r] = x[r], x[y]
+            s = ''
+            for z in range(len(x)):
+                s += x[z]
+            print(s)
+            x[y], x[r] = x[r], x[y]
+
+function1(lista, 0)
